@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Derp Boards</title>
+<link rel="icon" type="image/x-icon" href="icon.ico">
     <style>
         /* CSS Styles */
         body {
@@ -20,7 +21,7 @@
             color: #fff;
             text-align: center;
             padding: 10px;
-            font-size: 48px; /* Adjust the font size to your preference */
+            font-size: 72px;
         }
 
         #post-container {
@@ -41,6 +42,7 @@
             padding: 10px;
             background-color: #f9f9f9;
             border-radius: 5px;
+            cursor: pointer; /* Add cursor pointer to indicate clickable */
         }
 
         /* Pagination styles */
@@ -77,6 +79,7 @@
 </head>
 <body>
     <header>
+	<img src="logo1.png" alt="Derp Boards Logo">
         Derp Boards
     </header>
     <main>
@@ -89,17 +92,18 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Derp Boards</p>
+        <p>&copy; 2024 Xelionix GP</p>
     </footer>
 
     <script>
 
-              // JavaScript for creating posts and pagination
-        function createPost(content) {
+        // JavaScript for creating posts and pagination
+        function createPost(content, postId) {
             const postContainer = document.getElementById("post-container");
             const post = document.createElement("div");
             post.className = "post";
             post.textContent = content;
+            post.dataset.postId = postId; // Add data attribute for post ID
             postContainer.appendChild(post);
         }
 
@@ -125,7 +129,9 @@
 
             // Create 40 posts for the selected page
             for (let i = 1; i <= 40; i++) {
-                createPost(`Page ${page}, Post #${i}`);
+                const postId = (page - 1) * 40 + i;
+                const content = `Page ${page}, Post #${postId}`;
+                createPost(content, postId);
             }
 
             // Highlight the active page link
@@ -139,8 +145,14 @@
         // Create 20 pages initially
         createPaginationLinks(20);
 
-        // Initially, show the first page of posts
-        showPage(1);
+        // Event listener to redirect to messages.htm when a post is clicked
+        document.addEventListener("click", function(event) {
+            const postId = event.target.dataset.postId;
+            if (postId) {
+                window.location.href = `messages.htm?postId=${postId}`;
+            }
+        });
     </script>
 </body>
 </html>
+
