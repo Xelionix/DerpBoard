@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DerpBoard Messages</title>
+<link rel="icon" type="image/x-icon" href="icon.ico">
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: "Comic Sans MS", cursive;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #333; /* Text color */
+        }
+        header {
+            text-align: center;
+            font-size: 72px;
+ 	    font-family: "Curlz MT", cursive;
+            color: #fff; /* Header text color */
+            background-color: #333; /* Header background color */
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .message {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+        }
+        .message-content {
+            margin-bottom: 10px;
+        }
+        img, video, audio {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        #swf-container {
+            max-width: 100%;
+            height: 400px;
+            margin-bottom: 10px;
+        }
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #fff; /* Footer text color */
+            background-color: #333; /* Footer background color */
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>DerpBoards- Messages</header>
+
+    <div id="messages-container">
+        <!-- Placeholder messages with different file types -->
+        <div class="message">
+            <div class="message-content">
+                <strong>User1:</strong> This is a text message.
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="message-content">
+                <strong>User2:</strong> This is a PNG image:
+                <br>
+                <img src="image.png" alt="PNG Image">
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="message-content">
+                <strong>User3:</strong> This is a WebM video:
+                <br>
+                <video controls>
+                    <source src="video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="message-content">
+                <strong>User4:</strong> This is an AAC audio:
+                <br>
+                <audio controls>
+                    <source src="audio.aac" type="audio/aac">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+        </div>
+
+           <div id="messages-container">
+        <!-- Placeholder messages with SWF content -->
+        <div class="message">
+            <div class="message-content">
+                <strong>User1:</strong> This is an SWF file:
+                <br>
+                <div id="swf-container-1">
+                    <p>Loading SWF content...</p>
+                </div>
+                <button class="swf-button" onclick="loadSWF('file.swf', 'Custom SWF 1', 'custom-image1.jpg', 'swf-container-1')">SWF</button>
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="message-content">
+                <strong>User2:</strong> This is another SWF file:
+                <br>
+                <div id="swf-container-2">
+                    <p>Loading SWF content...</p>
+                </div>
+                <button class="swf-button" onclick="loadSWF('file2.swf', 'Custom SWF 2', 'custom-image2.jpg', 'swf-container-2')">SWF</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>&copy; 2024 Xelionix GP</footer>
+</body>
+</html>
